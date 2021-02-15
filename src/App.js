@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 
 class App extends Component{
+  // create State to store the output from the API request
+  state = {
+    contacts: []
+  };
   // Create Bootstrap Card
   render() {
     return (
