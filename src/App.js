@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 class App extends Component{
+  // Create Bootstrap Card
   render() {
     return (
         <div className="card">
