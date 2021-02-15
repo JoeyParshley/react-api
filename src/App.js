@@ -5,6 +5,7 @@ class App extends Component{
   state = {
     contacts: []
   };
+
   // Create Bootstrap Card
   render() {
     return (
@@ -16,6 +17,24 @@ class App extends Component{
           </div>
         </div>
     );
+  }
+
+  //calling the api
+  /**
+   * componentDidMount() - this method is executed immediately our component is mounted and
+   * we will make the api request in that method
+   */
+  componentDidMount() {
+    // ,ake GET resuest to the endpoint
+    fetch('https://jsonholder.typicode.com/users')
+        // parses the output to JSON
+        .then(res => res.json)
+        // set the value of the state to the output from the API call
+        .then((data) => {
+          this.setState({contacts:data})
+        })
+        // log any errors
+        .catch(console.log)
   }
 }
 
